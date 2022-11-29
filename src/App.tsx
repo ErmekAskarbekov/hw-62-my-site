@@ -38,29 +38,6 @@ function App() {
     {name: "Chicken", count: 0, id: nanoid()},
   ]);
 
-  const addOrder = (name:string) => {
-    setOrders(orders.map(order => {
-      if (order.name === name) {
-        return {
-          ...order,
-          count: order.count + 1
-        }
-      }
-      return order;
-    }))
-  };
-
-  const removeOrder = (name:string) => {
-    setOrders(orders.map(order => {
-      if (order.name === name) {
-        return {
-          ...order,
-          count: 0
-        }
-      }
-      return order;
-    }))
-  }
   return (
     <>
       <header>
@@ -68,18 +45,9 @@ function App() {
       </header>
       <main className="container-fluid">
         <Routes>
-          <Route path="/" element={(
-              <Home/>
-          )}/>
-          <Route path='/FastFoodService' element={(
-              <FastFoodApp
-                addOrder = {addOrder()};
-                
-              />
-          )}/>
-          <Route path="/RestCountries" element={(
-              <RestCountries/>
-          )}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path='/FastFoodService' element={<FastFoodApp />}/>
+          <Route path="/RestCountries" element={<RestCountries/>}/>
         </Routes>
       </main>
     </>

@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import Orders from "../../Components/Orders/Orders";
 import AddOrder from "../../Components/Add-order/AddOrder";
-import './App.css';
-import cola from './assets/cola.png';
-import coffee from './assets/coffee.png';
-import donut from './assets/donut.png';
-import fries from './assets/fries.png';
-import hamburger from './assets/hamburger.png';
-import doner from './assets/doner.png';
-import pizza from './assets/pizza.png';
-import chicken from './assets/chicken.png';
+import cola from '../../assets/cola.png';
+import coffee from '../../assets/coffee.png';
+import donut from '../../assets/donut.png';
+import fries from '../../assets/fries.png';
+import hamburger from '../../assets/hamburger.png';
+import doner from '../../assets/doner.png';
+import pizza from '../../assets/pizza.png';
+import chicken from '../../assets/chicken.png';
 import {nanoid} from 'nanoid';
 
-function FastFoodApp() {
+const FastFoodApp: FC = () => {
     const orderMenu = [
         {name: "Cola", price: 45, img: cola},
         {name: "Coffee", price: 80, img: coffee},
